@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-07-16T06:52:58.629Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15" etag="P_yXH3hvi1dVKGNvnaiL" version="21.6.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-07-16T07:01:58.287Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15" etag="E4HuPKWTWwJF_4-QqcKy" version="21.6.2" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1781" dy="689" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -351,7 +351,7 @@
           <mxGeometry x="100" y="555" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="JqIszidguOzUqe5P66ZB-106" value="sockerで作成したfd ex3&lt;br&gt;&lt;br&gt;server情報１&lt;br&gt;server情報2&lt;br&gt;&lt;br&gt;sockerで作成したfd ex4&lt;br&gt;&lt;br&gt;server情報１&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;server情報2&lt;br&gt;&lt;br&gt;みたいに格納する" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="178.75" y="900" width="160" height="160" as="geometry" />
+          <mxGeometry x="160" y="900" width="160" height="160" as="geometry" />
         </mxCell>
         <mxCell id="JqIszidguOzUqe5P66ZB-108" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.813;entryY=1.067;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="JqIszidguOzUqe5P66ZB-106" target="JqIszidguOzUqe5P66ZB-99">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -372,7 +372,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="JqIszidguOzUqe5P66ZB-112" value="server情報１、２はそれぞれ&lt;br&gt;&lt;br&gt;server情報{&lt;br&gt;servername&lt;br&gt;port&lt;br&gt;location&lt;br&gt;}&lt;br&gt;などの情報が格納されているものとなっている" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="360" y="900" width="160" height="160" as="geometry" />
+          <mxGeometry x="338.75" y="900" width="160" height="160" as="geometry" />
         </mxCell>
         <mxCell id="JqIszidguOzUqe5P66ZB-113" value="ここでのアクセスは&lt;br&gt;アクセス者による&lt;br&gt;要求に他ならない" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="680" y="560" width="150" height="85" as="geometry" />
@@ -390,6 +390,9 @@
             </Array>
           </mxGeometry>
         </mxCell>
+        <mxCell id="JqIszidguOzUqe5P66ZB-123" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="JqIszidguOzUqe5P66ZB-115" target="JqIszidguOzUqe5P66ZB-122">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="JqIszidguOzUqe5P66ZB-115" value="要求をaccept関数で受け付けられたか" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="540" y="670" width="120" height="60" as="geometry" />
         </mxCell>
@@ -404,6 +407,26 @@
         </mxCell>
         <mxCell id="JqIszidguOzUqe5P66ZB-121" value="socketで作成したFDを&lt;br&gt;管理するFDの集合体&lt;br&gt;&lt;br&gt;acceptで追加したFDを&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;管理するFDの集合体&lt;br&gt;&lt;br&gt;（sendも同じ）&lt;br&gt;というふうに作成する必要がある" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="-170" y="650" width="140" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="JqIszidguOzUqe5P66ZB-126" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="JqIszidguOzUqe5P66ZB-122" target="JqIszidguOzUqe5P66ZB-125">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JqIszidguOzUqe5P66ZB-122" value="acceptによって&lt;br&gt;出来たfdをfdのlist&lt;br&gt;に追加する" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="540" y="750" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="JqIszidguOzUqe5P66ZB-125" value="" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="505" y="820" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="JqIszidguOzUqe5P66ZB-128" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="JqIszidguOzUqe5P66ZB-127">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JqIszidguOzUqe5P66ZB-127" value="acceptによって出来たfdで情報を受け取る" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="515" y="825" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JqIszidguOzUqe5P66ZB-129" value="エラーが起きる" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="400" y="770" width="95" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
