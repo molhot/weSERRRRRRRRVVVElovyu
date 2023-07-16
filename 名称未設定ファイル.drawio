@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-07-16T16:15:23.630Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15" etag="X5BJAjiaQs28ktXchmzD" version="21.6.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-07-16T16:19:28.830Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15" etag="oPPiJD77xnRzaZlz2GkM" version="21.6.2" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="2154" dy="664" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1920" math="0" shadow="0">
       <root>
@@ -413,16 +413,11 @@
         <mxCell id="JqIszidguOzUqe5P66ZB-122" value="acceptによって&lt;br&gt;出来たfdをfdのlist&lt;br&gt;に追加する" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="390" y="890" width="120" height="50" as="geometry" />
         </mxCell>
+        <mxCell id="JqIszidguOzUqe5P66ZB-166" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="JqIszidguOzUqe5P66ZB-125" target="JqIszidguOzUqe5P66ZB-165">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="JqIszidguOzUqe5P66ZB-125" value="" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="355" y="975" width="190" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="JqIszidguOzUqe5P66ZB-128" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="JqIszidguOzUqe5P66ZB-127">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="270" y="780" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="270" y="1010" />
-            </Array>
-          </mxGeometry>
         </mxCell>
         <mxCell id="JqIszidguOzUqe5P66ZB-127" value="acceptによって出来たfdで情報を受け取る" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="365" y="980" width="170" height="60" as="geometry" />
@@ -536,7 +531,7 @@
           <mxGeometry x="586" y="1100" width="238" height="30" as="geometry" />
         </mxCell>
         <mxCell id="JqIszidguOzUqe5P66ZB-157" value="No" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="519" y="1090" width="60" height="30" as="geometry" />
+          <mxGeometry x="547.5" y="1080" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="JqIszidguOzUqe5P66ZB-158" value="Yes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="730" y="1130" width="60" height="30" as="geometry" />
@@ -555,6 +550,15 @@
         </mxCell>
         <mxCell id="JqIszidguOzUqe5P66ZB-162" value="終了" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="644.38" y="1160" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JqIszidguOzUqe5P66ZB-167" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.329;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="JqIszidguOzUqe5P66ZB-164" target="JqIszidguOzUqe5P66ZB-94">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JqIszidguOzUqe5P66ZB-164" value="" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="343.75" y="1077.5" width="216.25" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="JqIszidguOzUqe5P66ZB-165" value="受け取ったメッセージに&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;合わせてレスポンスを作成する" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="345" y="1080" width="210" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
