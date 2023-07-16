@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-07-16T06:48:19.751Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15" etag="oTNVA9SGPqwpxpct7L2b" version="21.6.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-07-16T06:52:58.629Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15" etag="P_yXH3hvi1dVKGNvnaiL" version="21.6.2" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1781" dy="689" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -311,6 +311,9 @@
         <mxCell id="JqIszidguOzUqe5P66ZB-95" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="JqIszidguOzUqe5P66ZB-92" target="JqIszidguOzUqe5P66ZB-94">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="JqIszidguOzUqe5P66ZB-116" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="JqIszidguOzUqe5P66ZB-92" target="JqIszidguOzUqe5P66ZB-115">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="JqIszidguOzUqe5P66ZB-92" value="何かしらのアクセスが制限時間内できたか" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="530" y="600" width="140" height="40" as="geometry" />
         </mxCell>
@@ -319,9 +322,6 @@
         </mxCell>
         <mxCell id="JqIszidguOzUqe5P66ZB-96" value="No" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="455" y="590" width="60" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="JqIszidguOzUqe5P66ZB-97" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="540" y="670" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="JqIszidguOzUqe5P66ZB-98" value="FDの集合体&lt;br&gt;を作る" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="50" y="660" width="120" height="40" as="geometry" />
@@ -382,6 +382,28 @@
             <mxPoint x="700" y="730" as="sourcePoint" />
             <mxPoint x="750" y="680" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="JqIszidguOzUqe5P66ZB-117" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="JqIszidguOzUqe5P66ZB-115" target="JqIszidguOzUqe5P66ZB-94">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="450" y="700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JqIszidguOzUqe5P66ZB-115" value="要求をaccept関数で受け付けられたか" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="540" y="670" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JqIszidguOzUqe5P66ZB-118" value="No" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="480" y="700" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JqIszidguOzUqe5P66ZB-119" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=-0.05;entryY=0.55;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="JqIszidguOzUqe5P66ZB-121" target="JqIszidguOzUqe5P66ZB-98">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-57" y="673" as="sourcePoint" />
+            <mxPoint x="-40" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JqIszidguOzUqe5P66ZB-121" value="socketで作成したFDを&lt;br&gt;管理するFDの集合体&lt;br&gt;&lt;br&gt;acceptで追加したFDを&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;管理するFDの集合体&lt;br&gt;&lt;br&gt;（sendも同じ）&lt;br&gt;というふうに作成する必要がある" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-170" y="650" width="140" height="140" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
