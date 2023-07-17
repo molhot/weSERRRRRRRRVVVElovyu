@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-07-17T05:30:26.439Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15" etag="mjKahzHaAL_BCd5e3R3A" version="21.6.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-07-17T05:30:43.248Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15" etag="_q4A9I0trNvUpgxzLxAj" version="21.6.2" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="2154" dy="2584" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1920" math="0" shadow="0">
       <root>
@@ -916,6 +916,9 @@
         <mxCell id="JqIszidguOzUqe5P66ZB-289" value="ファイルは存在しているか" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="140" y="1300" width="170" height="40" as="geometry" />
         </mxCell>
+        <mxCell id="JqIszidguOzUqe5P66ZB-307" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="JqIszidguOzUqe5P66ZB-291" target="JqIszidguOzUqe5P66ZB-286">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="JqIszidguOzUqe5P66ZB-291" value="エラーメッセージの作成" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="330" y="1302.5" width="135" height="35" as="geometry" />
         </mxCell>
@@ -948,6 +951,9 @@
         </mxCell>
         <mxCell id="JqIszidguOzUqe5P66ZB-303" value="error" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="314.38" y="1420" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JqIszidguOzUqe5P66ZB-306" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.642;entryY=-0.067;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="JqIszidguOzUqe5P66ZB-304" target="JqIszidguOzUqe5P66ZB-286">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="JqIszidguOzUqe5P66ZB-304" value="成功メッセージの作成" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="162.5" y="1490" width="125" height="35" as="geometry" />
