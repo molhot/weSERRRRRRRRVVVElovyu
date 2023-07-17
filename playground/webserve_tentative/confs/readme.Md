@@ -31,15 +31,16 @@
 ## （上記を受けての）ルール
 - confファイルは必ず拡張子が.confであること  
 confファイルの記載方法は下記のようになっていること  
+シャープ以降は無視されるものとする  
   
 server {  
     listen 4242;  
-    server_name webserv1;  
-  
+    server_name "webserv1";  別に　server_name webserv1; でも良い  
+	root nanka;  
     index index.html index.php;  
   
     cgi_extension .cgi;  
-  
+    #aaaaa  
     allow_methods GET;  
   
     location / {  
