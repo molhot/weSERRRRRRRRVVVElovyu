@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 21:47:46 by user              #+#    #+#             */
-/*   Updated: 2023/07/17 23:05:48 by user             ###   ########.fr       */
+/*   Updated: 2023/07/17 23:07:52 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class LocationConf
 		size_t 									_maxBodySize;
 		std::map<std::string, std::string> 		_errorpage_set;
 		bool									_autoindex;
-		std::map<std::string, std::string>				_return_redirect;
+		std::map<std::string, std::string>		_return_redirect;
 	public:
 	
 };
