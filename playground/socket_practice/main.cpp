@@ -244,7 +244,7 @@ int main(void)
 
 	/* ソケットを接続待ちに設定 */ //http://chokuto.ifdef.jp/advanced/function/listen.html
 	//第二引数は同時に処理できる接続要求数 //1でいいんじゃないの
-    if (listen(w_addr, 2) == -1) {
+    if (listen(w_addr, 0) == -1) {
         printf("listen error\n");
         close(w_addr);
         return -1;
