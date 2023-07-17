@@ -39,24 +39,27 @@ server \{
     server_name "webserv1";  別に　server_name webserv1; でも良い  
 	root nanka;  
     index index.html index.php;  
-  
+	error_page   500 502 503 504  /50x.html;  
     cgi_extension .cgi;  
     #aaaaa  
     allow_methods GET;  
-  
     location / {  
+		root   /usr/share/nginx/html;  
+        index  index.html index.htm;  
         alias ./docs/;  
+		deny all; この配下のファイルにアクセスできないようにする  
     }  
 \}  
   
 * server {}  
 	* serverと{}の間は複数の空白（空白　たぶ）を許容する  
   
-厳密に空白に則ること  
+### 複数の空白（空白　たぶ）を許容する 空白位置は準拠  
 * \#後は普通の文字とみなす  
 * listen \[数字\] ※空白は一つ  
 * servername \[("or')名前("or')\] ※空白は一つ  
 * root [] ※空白は一つ  
 * index [pageA pageB pageC ...]  
 * allow_methods [methodA methodB ...]  
+* error_page
 
