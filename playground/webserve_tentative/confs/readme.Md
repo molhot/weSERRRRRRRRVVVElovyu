@@ -120,6 +120,8 @@ server \{
 * client_max_body_size 1m;同上 デフォルトは1m  
 * default_type mime-type;mimetypeに関しては調査必要  
 * etag on | off;意味は理解したいかも 可能であれば  
+* log_not_found [on off];ファイルが見つからなかった場合のエラーログを出すかどうか決めれる  
+  
 
 ## 一旦対応しないけど書き込みは可能な設定（使い方わからん。。。）  
 connection_pool_size size;単位は許容しないので注意  
@@ -127,3 +129,6 @@ directio size | off;単位許容 使い方不明。。。
 directio_alignment size;単位は許容しないので注意  
 disable_symlinks off;ファイルを開く時にシンボリックリンクをどう扱うかを決定  
 if_modified_since off | exact | before;  
+keepalive_requests 1000;使い方不明  
+keepalive_time 1h;使い方不明  
+large_client_header_buffers 4 8k;  
