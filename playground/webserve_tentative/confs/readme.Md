@@ -92,9 +92,10 @@ server \{
 * error_log ;  
 * keepalive_requests ;一度の接続で受け付けることのできるリクエスト数の上限  
 * keepalive_timeout ;キープアライブのタイムアウトまでの秒数  
-* server_tokens ;バージョン番号の表示  
+* server_tokens ;バージョン番号の表示?  
 * autoindex ;  
-* rewrite ; ??  
+* rewrite before_url after_url; どうやら正規表現込みのパスを解釈して後ろに回すらしい??
+* return コード番号 path;  
 * client_body_buffer_size 8k;数字でも単位でも可能な模様、種類に関して要検討 デフォは8kか16k  
 * client_body_timeout 60s;数字でも単位でも可能な模様 デフォルトは60s  
 * client_header_buffer_size 1k;同上 デフォルトは1k  
@@ -110,6 +111,7 @@ server \{
 * keepalive_timeout ;キープアライブのタイムアウトまでの秒数  
 * server_tokens ;バージョン番号の表示  
 * root \[nanka] ※空白は一つ  
+* areas nankaPATH;  
 * index [pageA pageB pageC ...]  
 * autoindex ;  
 * rewrite ; ??  
