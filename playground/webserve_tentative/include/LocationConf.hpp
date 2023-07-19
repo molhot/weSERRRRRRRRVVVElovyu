@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SameportConf.hpp                                   :+:      :+:    :+:   */
+/*   LocationConf.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/17 21:23:41 by user              #+#    #+#             */
-/*   Updated: 2023/07/19 23:14:41 by user             ###   ########.fr       */
+/*   Created: 2023/07/17 21:47:46 by user              #+#    #+#             */
+/*   Updated: 2023/07/19 10:29:58 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SameportConf_HPP
-#define SameportConf_HPP
+#ifndef LocationConf_HPP
+#define LocationConf_HPP
 
 #include <string>
-#include <vector>
 #include <map>
+#include <vector>
 
-#include "LocationConf.hpp"
-
-class SameportConf
+class LocationConf
 {
 	private:
 		std::string								_port;
-		std::vector<std::string>				_server_name;
+		std::string								_server_name;
 		std::string								_root;
 		std::vector<std::string>				_indexpage_set;
 		std::vector<std::string>				_allowmethod_set;
@@ -45,11 +43,11 @@ class SameportConf
 		std::string								_default_type;
 
 	public:
-		SameportConf();
-		~SameportConf();
+		LocationConf();
+		~LocationConf();
 
 		void									set_port(std::string const &port);
-		void									set_servername(std::vector<std::string> const &server_name);
+		void									set_servername(std::string const &server_name);
 		void									set_root(std::string const &root);
 		void									set_indexpage_set(std::vector<std::string> const &root);
 		void									set_allowmethod_set(std::vector<std::string> const &root);
@@ -67,7 +65,7 @@ class SameportConf
 		void									set_client_header_buffer_size(size_t const &buffersize);
 		void									set_client_header_timeout(size_t const &timeout);
 		void									set_client_maxbody_size(size_t const &buffersize);
-		void									set_default_type(std::string const &default_type);
+		void									set__default_type(std::string const &default_type);
 
 		std::string								get_port(void) const;
 		std::string								get_servername(void) const;
@@ -88,7 +86,7 @@ class SameportConf
 		size_t									get_client_header_buffer_size(size_t const &buffersize);
 		size_t									get_client_header_timeout(size_t const &timeout);
 		size_t									get_client_maxbody_size(size_t const &buffersize);
-		std::string								get__default_type(std::string const &default_type);
+		std::string								get__default_type(std::string const &default_type);	
 };
 
 #endif
