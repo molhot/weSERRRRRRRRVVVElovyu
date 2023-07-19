@@ -6,11 +6,11 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 21:32:19 by user              #+#    #+#             */
-/*   Updated: 2023/07/19 23:46:26 by user             ###   ########.fr       */
+/*   Updated: 2023/07/20 00:16:54 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/AllConf.hpp"
+#include "../../include/AllConf.hpp"
 
 bool	AllConf::location_dhirect_ch(std::string const &line)
 {

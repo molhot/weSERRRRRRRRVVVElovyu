@@ -6,11 +6,11 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:08:03 by user              #+#    #+#             */
-/*   Updated: 2023/07/19 23:15:03 by user             ###   ########.fr       */
+/*   Updated: 2023/07/20 00:17:26 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/SameportConf.hpp"
+#include "../../include/SameportConf.hpp"
 
 SameportConf::SameportConf()
 {
