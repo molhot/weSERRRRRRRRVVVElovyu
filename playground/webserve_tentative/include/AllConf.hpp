@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 21:18:13 by user              #+#    #+#             */
-/*   Updated: 2023/07/19 23:26:09 by user             ###   ########.fr       */
+/*   Updated: 2023/07/20 11:59:04 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #include <fstream>
 #include <sstream>
 #include "InterpretLocationconf.hpp"
-#include "InterpretSeverconf.hpp"
+#include "InterpretServerconf.hpp"
 #include "HandlingString.hpp"
 #include "SameportConf.hpp"
 
@@ -38,7 +38,6 @@ class AllConf
 	public:
 		AllConf(std::string const &config_file);
 		~AllConf();
-
 		bool												serverkeyword(std::string const &line, SameportConf port_conf);
 		bool												locationkeyword(std::string const &line, SameportConf port_conf);
 };

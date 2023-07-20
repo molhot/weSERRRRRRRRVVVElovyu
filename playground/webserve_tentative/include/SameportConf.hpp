@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 21:23:41 by user              #+#    #+#             */
-/*   Updated: 2023/07/19 23:14:41 by user             ###   ########.fr       */
+/*   Updated: 2023/07/20 11:01:23 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class SameportConf
 		std::string								_errorlog;
 		size_t									_keepaliverequests;
 		size_t									_keepalive_timeout;
-		const int								_server_tokens = 1;
+		const int								_server_tokens;
 		std::string								_autoindex;
 		size_t									_client_body_buffer_size;
 		size_t									_client_body_timeout;

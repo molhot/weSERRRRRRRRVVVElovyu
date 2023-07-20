@@ -6,11 +6,23 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 21:32:19 by user              #+#    #+#             */
-/*   Updated: 2023/07/20 00:16:54 by user             ###   ########.fr       */
+/*   Updated: 2023/07/20 11:58:58 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/AllConf.hpp"
+
+AllConf::AllConf(std::string const &config_file):_confready(false)
+{
+	conf_check(config_file);
+}
+
+AllConf::~AllConf()
+{
+	
+}
+
+bool	AllConf::locationkeyword(std::string const &line, SameportConf port_conf){ (void)line; (void)port_conf; return (true);}
 
 bool	AllConf::location_dhirect_ch(std::string const &line)
 {
@@ -54,7 +66,7 @@ bool	AllConf::serverkeyword(std::string const &line, SameportConf port_conf)
 	else if (key_word == "root")
 		port_conf.set_root(val);
 	else if (key_word == "index")
-		port_conf.set_root(HandringString::inputargtomap_withoutfirst(line));
+		port_conf.set_root(val);
 	else if (key_word == "allow_methods")
 		port_conf.set_allowmethod_set(HandringString::inputargtomap_withoutfirst(line));
 	else if (key_word == "error_page")
@@ -68,6 +80,8 @@ bool	AllConf::serverkeyword(std::string const &line, SameportConf port_conf)
 	else if (key_word == "access_log")
 		port_conf.set_accesslog(val);
 	// else if 
+
+	return (true);
 }
 
 bool	AllConf::server_directive_ch(std::string const &line, bool *in_serverdhirect, bool *in_allocationdhirect)
@@ -76,7 +90,7 @@ bool	AllConf::server_directive_ch(std::string const &line, bool *in_serverdhirec
 	std::istringstream	splited_woeds(line);
 	std::string			key_word;
 	SameportConf		port_conf;
-	
+
 	splited_woeds >> key_word;
 	if (key_word == "location{" || key_word == "location")
 	{
@@ -88,8 +102,18 @@ bool	AllConf::server_directive_ch(std::string const &line, bool *in_serverdhirec
 			return (true);
 		}
 	}
+	else if (*in_allocationdhirect == false && key_word == "}")
+	{
+		*in_serverdhirect = false;
+		return (true);
+	}
 	else if (*in_allocationdhirect == false)
 		conf_correct = serverkeyword(line, port_conf);
+	else if (*in_allocationdhirect == true && key_word == "}")
+	{
+		*in_allocationdhirect = false;
+		return (true);
+	}
 	else if (*in_allocationdhirect == true)
 		conf_correct = locationkeyword(line, port_conf);
 	return (conf_correct);
@@ -135,7 +159,7 @@ bool	AllConf::contentch(std::string const &config_file)
     	else if (in_serverdhirect == false && serverstr_contain(line) == false)
 			return (false);
 		else if (in_serverdhirect == false && serverstr_contain(line) == true)
-			in_serverdhirect == true;
+			in_serverdhirect = true;
 		else if (in_serverdhirect == true)
 		{
 			if (server_directive_ch(line, &in_serverdhirect, &in_allocationdhirect) == false)
@@ -151,14 +175,4 @@ void	AllConf::conf_check(std::string const &config_file)
 		return ;
 	else
 		this->_confready = contentch(config_file);
-}
-
-AllConf::AllConf(std::string const &config_file):_confready(false)
-{
-	conf_check(config_file);
-}
-
-AllConf::~AllConf()
-{
-	
 }

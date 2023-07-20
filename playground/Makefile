@@ -1,13 +1,10 @@
-NAME = ex01
+NAME = webserve
 CXX = c++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-CONF_DIR = srcs/conf
+CONF_DIR = webserve_tentative/srcs/conf
 # conに関するsrc
-SRSC = $(CONF_DIR)/AllConf.cpp $(CONF_DIR)/LocationConf.cpp $(CONF_DIR)/SameportConf.cpp
-
-# main
-SRCS += srcs/main.cpp
+SRCS = webserve_tentative/srcs/main.cpp $(CONF_DIR)/AllConf.cpp $(CONF_DIR)/LocationConf.cpp $(CONF_DIR)/SameportConf.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
