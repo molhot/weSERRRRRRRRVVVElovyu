@@ -93,7 +93,7 @@ server \{
 * keepalive_requests ;一度の接続で受け付けることのできるリクエスト数の上限  
 * keepalive_timeout ;キープアライブのタイムアウトまでの秒数  
 * server_tokens ;バージョン番号の表示?  
-* autoindex ;  
+* autoindex [on or off];  
 * rewrite before_url after_url; どうやら正規表現込みのパスを解釈して後ろに回すらしい??
 * return コード番号 path;  
 * client_body_buffer_size 8k;数字でも単位でも可能な模様、種類に関して要検討 デフォは8kか16k  
@@ -134,3 +134,12 @@ if_modified_since off | exact | before;
 keepalive_requests 1000;使い方不明  
 keepalive_time 1h;使い方不明  
 large_client_header_buffers 4 8k;  
+  
+※ 気になっていること  
+nginxの数値を設定できる箇所、限界ちってなんだ？一旦INT_MAX(2147483647)にしときたい  
+chatGPT曰く  
+Nginxのタイムアウト設定や関連する値については、基本的にはINTの範囲（通常は32ビットまたは64ビット）内で指定することが一般的です。これは  
+タイムアウト設定が内部的に整数型（通常はintまたはtime_t）で表現されるためです。  
+とのこと  
+  
+めんどくさいからダブルクオーテーションは特殊文字として解釈したくない（願望）  

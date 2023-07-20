@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 00:18:13 by user              #+#    #+#             */
-/*   Updated: 2023/07/20 11:15:52 by user             ###   ########.fr       */
+/*   Updated: 2023/07/20 18:48:57 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,9 @@ int main(int argc, char **argv)
 	}
 
 	AllConf allconf(argv[1]);
+	if (allconf.get_confready() == false)
+	{
+		std::cout << "x" << std::endl;
+		return (1);
+	}
 }
