@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 21:32:19 by user              #+#    #+#             */
-/*   Updated: 2023/07/20 11:58:58 by user             ###   ########.fr       */
+/*   Updated: 2023/07/20 12:01:03 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,6 +166,7 @@ bool	AllConf::contentch(std::string const &config_file)
 				return (false);
 		}
     }
+	return (true);
 }
 
 void	AllConf::conf_check(std::string const &config_file)
