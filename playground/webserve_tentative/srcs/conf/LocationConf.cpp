@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 10:21:54 by user              #+#    #+#             */
-/*   Updated: 2023/07/22 02:09:45 by user             ###   ########.fr       */
+/*   Updated: 2023/07/22 03:18:26 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,9 @@ void LocationConf::reset_locationconf(SameportConf const &some)
 	this->_client_header_timeout = some.get_client_header_timeout();
 	this->_client_maxbody_size = some.get_client_maxbody_size();
 	this->_default_type = some.get_default_type();
+
+	_cgi_path = "";
+	_upload_path = "";
 }
 
 void	LocationConf::show_locationconfinf()

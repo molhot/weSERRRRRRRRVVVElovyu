@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 21:32:19 by user              #+#    #+#             */
-/*   Updated: 2023/07/22 02:16:55 by user             ###   ########.fr       */
+/*   Updated: 2023/07/22 02:51:54 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -538,7 +538,10 @@ bool	AllConf::allocationch(std::string const &config_file)
 			else//完全に外
 			{
 				if (serverstr_contain(skip_emp) == true)
+				{
+					locationconf.reset_locationconf(all_conf[conf_rank[rank]]);
 					in_server = true;
+				}
 				else if (skip_emp == "" || skip_emp[0] == '#')
 					;
 			}
