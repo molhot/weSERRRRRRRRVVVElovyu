@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 21:18:13 by user              #+#    #+#             */
-/*   Updated: 2023/07/21 11:23:38 by user             ###   ########.fr       */
+/*   Updated: 2023/07/21 17:01:59 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ class AllConf
 		bool												get_confready();
 		bool												serverkeyword(std::string const &line, SameportConf& port_conf);
 		bool												locationkeyword(std::string const &line, LocationConf& locationconf);
+		bool												allocationch(std::string const &config_file);
 };
 
 #endif

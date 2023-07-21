@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 21:32:19 by user              #+#    #+#             */
-/*   Updated: 2023/07/21 15:17:48 by user             ###   ########.fr       */
+/*   Updated: 2023/07/21 19:59:23 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,102 +29,108 @@ bool AllConf::get_confready()
 
 bool	AllConf::locationkeyword(std::string const &line, LocationConf& locationconf)
 {
-	(void)line;
-	(void)locationconf;
-	// std::istringstream	splited_woeds(line);
-	// std::string			key_word;
-	// std::string			val;
+	std::istringstream	splited_woeds(line);
+	std::string			key_word;
+	std::string			val;
 
-	// splited_woeds >> key_word >> val;
-	// if (key_word == "" && val == "")
-	// {
-	// 	std::cout << "there is all emp" << std::endl;
-	// 	return (true);
-	// }
-	// if (InterpretServerconf::serverkeyword_ch(key_word) == false)
-	// 	return (false);
-	// if (key_word == "listen")
-	// 	port_conf.set_port(val);
-	// else if (key_word == "cgi_extension")//何するかわかってない
-	// 	;
-	// else if (key_word == "server_name")
-	// 	port_conf.set_servername(HandringString::inputargtomap_withoutfirst(line));
-	// else if (key_word == "root")
-	// 	port_conf.set_root(val);
-	// else if (key_word == "index")
-	// 	port_conf.set_root(val);
-	// else if (key_word == "allow_methods")
-	// 	port_conf.set_allowmethod_set(HandringString::inputargtomap_withoutfirst(line));
-	// else if (key_word == "error_page")
-	// 	port_conf.set_errorlog(val);
-	// else if (key_word == "chunked_transfer_encoding")
-	// {
-	// 	if (val != "on" && val != "off")
-	// 		return (false);
-	// 	port_conf.set_chunked_transferencoding_allow(HandringString::return_matchpattern("on", "off", val));
-	// }
-	// else if (key_word == "access_log")
-	// 	port_conf.set_accesslog(val);
-	// else if (key_word == "error_log")
-	// 	port_conf.set_errorlog(val);
-	// else if (key_word == "keepalive_requests")
-	// {
-	// 	if (HandringString::ch_under_intmax(val) == false)
-	// 		return (false);
-	// 	port_conf.set_keepaliverequests(HandringString::str_to_int(HandringString::skip_lastsemicoron(val)));
-	// }
-	// else if (key_word == "keepalive_timeout")//timeoutの実装がC++98のみでは難しい、Cでも許可された関数にない
-	// {
-	// 	if (HandringString::ch_under_intmax(val) == false)
-	// 		return (false);
-	// 	port_conf.set_keepalive_timeout(HandringString::str_to_int(HandringString::skip_lastsemicoron(val)));
-	// }
-	// else if (key_word == "server_tokens")
-	// 	;
-	// else if (key_word == "autoindex")
-	// {
-	// 	if (val != "on" && val != "off")
-	// 		return (false);
-	// 	port_conf.set_chunked_transferencoding_allow(HandringString::return_matchpattern("on", "off", val));
-	// }
-	// else if (key_word == "rewrite")//何するのかわからん
-	// 	;
-	// else if (key_word == "return")//何するのかわからん
-	// 	;
-	// else if (key_word == "client_body_buffer_size")//単位付きで入ってくる場合に対応する必要性、簡単のために単位なしに一旦する
-	// {
-	// 	if (HandringString::ch_under_intmax(val) == false)
-	// 		return (false);
-	// 	port_conf.set_client_body_buffer_size(HandringString::str_to_int(HandringString::skip_lastsemicoron(val)));
-	// }
-	// else if (key_word == "client_body_timeout")
-	// {
-	// 	if (HandringString::ch_under_intmax(val) == false)
-	// 		return (false);
-	// 	port_conf.set_client_body_timeout(HandringString::str_to_int(HandringString::skip_lastsemicoron(val)));
-	// }
-	// else if (key_word == "client_header_buffer_size")
-	// {
-	// 	if (HandringString::ch_under_intmax(val) == false)
-	// 		return (false);
-	// 	port_conf.set_client_header_buffer_size(HandringString::str_to_int(HandringString::skip_lastsemicoron(val)));
-	// }
-	// else if (key_word == "client_header_timeout")
-	// {
-	// 	if (HandringString::ch_under_intmax(val) == false)
-	// 		return (false);
-	// 	port_conf.set_client_header_timeout(HandringString::str_to_int(HandringString::skip_lastsemicoron(val)));
-	// }
-	// else if (key_word == "client_max_body_size")
-	// {
-	// 	if (HandringString::ch_under_intmax(val) == false)
-	// 		return (false);
-	// 	port_conf.set_client_maxbody_size(HandringString::str_to_int(HandringString::skip_lastsemicoron(val)));
-	// }
-	// else if (key_word == "default_type")
-	// 	port_conf.set_default_type(val);
-	// else
-	// 	return (false);
+	splited_woeds >> key_word >> val;
+	if (key_word == "" && val == "")
+		return (true);
+	std::cout << "key is " << key_word << std::endl;
+	std::cout << "val is " << val << std::endl;
+	if (InterpretLocationconf::locationkeyword_ch(key_word) == false)
+		return (false);
+	if (key_word == "listen")
+		locationconf.set_port(val);
+	else if (key_word == "cgi_extension")//何するかわかってない
+		;
+	else if (key_word == "server_name")
+		locationconf.set_servername(HandringString::inputargtomap_withoutfirst(line));
+	else if (key_word == "root")
+		locationconf.set_root(val);
+	else if (key_word == "alias")
+		locationconf.set_alias(val);
+	else if (key_word == "index")
+		locationconf.set_root(val);
+	else if (key_word == "allow_methods")
+		locationconf.set_allowmethod_set(HandringString::inputargtomap_withoutfirst(line));
+	else if (key_word == "error_page")
+		locationconf.set_errorlog(val);
+	else if (key_word == "chunked_transfer_encoding")
+	{
+		if (val != "on" && val != "off")
+			return (false);
+		locationconf.set_chunked_transferencoding_allow(HandringString::return_matchpattern("on", "off", val));
+	}
+	else if (key_word == "access_log")
+		locationconf.set_accesslog(val);
+	else if (key_word == "error_log")
+		locationconf.set_errorlog(val);
+	else if (key_word == "keepalive_requests")
+	{
+		if (HandringString::ch_under_intmax(val) == false)
+			return (false);
+		locationconf.set_keepaliverequests(HandringString::str_to_int(HandringString::skip_lastsemicoron(val)));
+	}
+	else if (key_word == "keepalive_timeout")//timeoutの実装がC++98のみでは難しい、Cでも許可された関数にない
+	{
+		if (HandringString::ch_under_intmax(val) == false)
+			return (false);
+		locationconf.set_keepalive_timeout(HandringString::str_to_int(HandringString::skip_lastsemicoron(val)));
+	}
+	else if (key_word == "server_tokens")
+		;
+	else if (key_word == "autoindex")
+	{
+		val = HandringString::skip_lastsemicoron(val);
+		if (val != "on" && val != "off")
+			return (false);
+		locationconf.set_chunked_transferencoding_allow(HandringString::return_matchpattern("on", "off", val));
+	}
+	else if (key_word == "upload_path")
+		locationconf.set_upload_path(val);
+	else if (key_word == "rewrite")//何するのかわからん
+		;
+	else if (key_word == "return")//何するのかわからん
+		;
+	else if (key_word == "client_body_buffer_size")//単位付きで入ってくる場合に対応する必要性、簡単のために単位なしに一旦する
+	{
+		if (HandringString::ch_under_intmax(val) == false)
+			return (false);
+		locationconf.set_client_body_buffer_size(HandringString::str_to_int(HandringString::skip_lastsemicoron(val)));
+	}
+	else if (key_word == "client_body_timeout")
+	{
+		if (HandringString::ch_under_intmax(val) == false)
+			return (false);
+		locationconf.set_client_body_timeout(HandringString::str_to_int(HandringString::skip_lastsemicoron(val)));
+	}
+	else if (key_word == "client_header_buffer_size")
+	{
+		if (HandringString::ch_under_intmax(val) == false)
+			return (false);
+		locationconf.set_client_header_buffer_size(HandringString::str_to_int(HandringString::skip_lastsemicoron(val)));
+	}
+	else if (key_word == "client_header_timeout")
+	{
+		if (HandringString::ch_under_intmax(val) == false)
+			return (false);
+		locationconf.set_client_header_timeout(HandringString::str_to_int(HandringString::skip_lastsemicoron(val)));
+	}
+	else if (key_word == "client_max_body_size")
+	{
+		if (HandringString::ch_under_intmax(val) == false)
+			return (false);
+		locationconf.set_client_maxbody_size(HandringString::str_to_int(HandringString::skip_lastsemicoron(val)));
+	}
+	else if (key_word == "default_type")
+		locationconf.set_default_type(val);
+	else if (key_word == "cgi_path")
+		locationconf.set_cgi_path(val);
+	else if (key_word == "allow_methods")
+		locationconf.set_allowmethod_set(HandringString::inputargtomap_withoutfirst(line));
+	else
+		return (false);
 	// return (true);
 	return (true);
 }
@@ -453,6 +459,55 @@ bool	AllConf::content_containnotrequiredword(std::string const &config_file)
 	return (true);
 }
 
+bool	AllConf::allocationch(std::string const &config_file)
+{
+	std::ifstream	conf_file(config_file);
+	std::string		line;
+	std::string		skip_emp;
+	bool			in_server= false;
+	bool			in_location = false;
+	size_t			pos = 1;
+	LocationConf	locationconf;
+
+	conf_file.is_open();
+	while (std::getline(conf_file, line))
+	{
+		skip_emp = HandringString::skipping_emptywd(line);
+		std::cout << "emp is " << skip_emp << std::endl;
+		if (in_location == true && in_server == true)// locationの中 locationの中だからserverの中
+		{
+			if (skip_emp == "}")
+				in_location = false;
+			else if (locationkeyword(line, locationconf) == false)
+			{
+				HandringString::error_show(skip_emp, pos);
+				return (false);
+			}
+		}
+		else
+		{
+			if (in_server == true)//locationの外　serverの中
+			{
+				if (location_ch(line) == true)
+					in_location = true;
+				else if (skip_emp == "}")
+					in_server = false;
+				else if (skip_emp[0] == '#')
+					;
+			}
+			else//完全に外
+			{
+				if (serverstr_contain(skip_emp) == true)
+					in_server = true;
+				else if (skip_emp == "" || skip_emp[0] == '#')
+					;
+			}
+		}
+		pos++;
+	}
+	return (true);
+}
+
 bool	AllConf::contentch(std::string const &config_file)
 {
 	if (content_containnotrequiredword(config_file) == false)
@@ -469,5 +524,5 @@ void	AllConf::conf_check(std::string const &config_file)
 		this->_confready = contentch(config_file);
 	if (this->_confready == false)
 		return ;
-	
+	this->_confready = allocationch(config_file);
 }

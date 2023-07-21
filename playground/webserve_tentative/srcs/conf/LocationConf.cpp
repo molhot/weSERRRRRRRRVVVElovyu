@@ -6,11 +6,12 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 10:21:54 by user              #+#    #+#             */
-/*   Updated: 2023/07/21 15:53:44 by user             ###   ########.fr       */
+/*   Updated: 2023/07/21 19:58:37 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/LocationConf.hpp"
+#include "../../include/SameportConf.hpp"
 
 LocationConf::LocationConf():_server_tokens(1)
 {
@@ -19,7 +20,25 @@ LocationConf::LocationConf():_server_tokens(1)
 
 LocationConf::LocationConf(SameportConf const &some):_server_tokens(1)
 {
-
+	this->_port = some.get_port();
+	this->_server_name = some.get_servername();
+	this->_root = some.get_root();
+	this->_indexpage_set = some.get_indexpage_set();
+	this->_allowmethod_set = some.get_allowmethod_set();
+	this->_maxBodySize = some.get_maxBodySize();
+	this->_errorpage_set = some.get_errorpage_set();
+	this->_chunked_transferencoding_allow = some.get_chunked_transferencoding_allow();
+	this->_accesslog = some.get_accesslog();
+	this->_errorlog = some.get_errorlog();
+	this->_keepaliverequests = some.get_keepaliverequests();
+	this->_keepalive_timeout = some.get_keepalive_timeout();
+	this->_autoindex = some.get_autoindex();
+	this->_client_body_buffer_size = some.get_client_body_buffer_size();
+	this->_client_body_timeout = some.get_client_body_timeout();
+	this->_client_header_buffer_size = some.get_client_body_buffer_size();
+	this->_client_header_timeout = some.get_client_header_timeout();
+	this->_client_maxbody_size = some.get_client_maxbody_size();
+	this->_default_type = some.get_default_type();
 }
 
 LocationConf::~LocationConf()
@@ -52,6 +71,9 @@ void	LocationConf::set_client_header_buffer_size(size_t const &buffersize){ this
 void	LocationConf::set_client_header_timeout(size_t const &timeout){ this->_client_header_timeout = timeout; };
 void	LocationConf::set_client_maxbody_size(size_t const &buffersize){ this->_client_maxbody_size = buffersize; };
 void	LocationConf::set_default_type(std::string const &default_type){ this->_default_type = default_type; };
+void	LocationConf::set_cgi_path(std::string const &cgi_path){ this->_cgi_path = cgi_path; };
+void	LocationConf::set_alias(std::string const &alias){ this->_alias = alias; };
+void	LocationConf::set_upload_path(std::string const &upload_path){ this->_upload_path = upload_path; };
 
 //     ∩∩     getterだよ
 //   （´･ω･）
@@ -80,3 +102,6 @@ size_t									LocationConf::get_client_header_timeout(void) { return (this->_cl
 size_t									LocationConf::get_client_maxbody_size(void) { return (this->_maxBodySize); };
 std::string								LocationConf::get_default_type(void) { return (this->_default_type); };
 int										LocationConf::get_version(void) { return (this->_server_tokens); };
+std::string								LocationConf::get_cgi_path(void) { return (this->_cgi_path); };
+std::string								LocationConf::get_alias(void) { return (this->_alias); };
+std::string								LocationConf::get_upload_path(void) { return (this->_upload_path); };

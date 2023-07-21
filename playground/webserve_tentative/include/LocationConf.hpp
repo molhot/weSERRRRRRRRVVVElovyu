@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 21:47:46 by user              #+#    #+#             */
-/*   Updated: 2023/07/21 15:54:10 by user             ###   ########.fr       */
+/*   Updated: 2023/07/21 19:57:40 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,15 @@
 
 #include "SameportConf.hpp"
 
+class SameportConf;
+
 class LocationConf
 {
 	private:
 		std::string								_port;
 		std::vector<std::string>				_server_name;
 		std::string								_root;
+		std::string								_alias;
 		std::vector<std::string>				_indexpage_set;
 		std::vector<std::string>				_allowmethod_set;
 		std::map<std::string, LocationConf>		_locations;
@@ -43,6 +46,8 @@ class LocationConf
 		size_t									_client_header_timeout;
 		size_t									_client_maxbody_size;
 		std::string								_default_type;
+		std::string								_cgi_path;
+		std::string								_upload_path;
 
 	public:
 		LocationConf();
@@ -69,6 +74,10 @@ class LocationConf
 		void									set_client_header_timeout(size_t const &timeout);
 		void									set_client_maxbody_size(size_t const &buffersize);
 		void									set_default_type(std::string const &default_type);
+		void									set_cgi_path(std::string const &default_type);
+		void									set_alias(std::string const &alias);
+		void									set_upload_path(std::string const &upload_path);
+
 
 		std::string								get_port(void) const;
 		std::vector<std::string>				get_servername(void) const;
@@ -91,6 +100,9 @@ class LocationConf
 		size_t									get_client_maxbody_size(void);
 		std::string								get_default_type(void);
 		int										get_version(void);
+		std::string								get_cgi_path(void);
+		std::string								get_alias(void);
+		std::string								get_upload_path(void);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 21:23:41 by user              #+#    #+#             */
-/*   Updated: 2023/07/21 15:12:08 by user             ###   ########.fr       */
+/*   Updated: 2023/07/21 19:20:51 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include <map>
 
 #include "LocationConf.hpp"
+
+class LocationConf;
 
 class SameportConf
 {
@@ -79,19 +81,19 @@ class SameportConf
 		std::map<std::string, LocationConf>		get_locations(void) const;
 		size_t									get_maxBodySize(void) const;
 		std::map<std::string, std::string>		get_errorpage_set(void) const;
-		bool									get_chunked_transferencoding_allow(void);
-		std::string								get_accesslog(void);
-		std::string								get_errorlog(void);
-		size_t									get_keepaliverequests(void);
-		size_t									get_keepalive_timeout(void);
-		bool									get_autoindex(void);
-		size_t									get_client_body_buffer_size(void);
-		size_t									get_client_body_timeout(void);
-		size_t									get_client_header_buffer_size(void);
-		size_t									get_client_header_timeout(void);
-		size_t									get_client_maxbody_size(void);
-		std::string								get__default_type(void);
-		int										get_version(void);
+		bool									get_chunked_transferencoding_allow(void) const;
+		std::string								get_accesslog(void) const;
+		std::string								get_errorlog(void) const;
+		size_t									get_keepaliverequests(void) const;
+		size_t									get_keepalive_timeout(void) const;
+		bool									get_autoindex(void) const;
+		size_t									get_client_body_buffer_size(void) const;
+		size_t									get_client_body_timeout(void) const;
+		size_t									get_client_header_buffer_size(void) const;
+		size_t									get_client_header_timeout(void) const;
+		size_t									get_client_maxbody_size(void) const;
+		std::string								get_default_type(void) const;
+		int										get_version(void) const;
 };
 
 #endif
