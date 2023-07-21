@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 21:47:46 by user              #+#    #+#             */
-/*   Updated: 2023/07/21 19:57:40 by user             ###   ########.fr       */
+/*   Updated: 2023/07/21 23:30:19 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ class LocationConf
 		std::string								_alias;
 		std::vector<std::string>				_indexpage_set;
 		std::vector<std::string>				_allowmethod_set;
-		std::map<std::string, LocationConf>		_locations;
 		size_t 									_maxBodySize;
 		std::map<std::string, std::string> 		_errorpage_set;//これめっちゃおかしい使い方できる　error_page 403 404 500 503 =404 /custom_404.html;
 		bool									_chunked_transferencoding_allow;
@@ -38,7 +37,7 @@ class LocationConf
 		std::string								_errorlog;
 		size_t									_keepaliverequests;
 		size_t									_keepalive_timeout;
-		const int								_server_tokens;
+		int										_server_tokens;
 		bool									_autoindex;
 		size_t									_client_body_buffer_size;
 		size_t									_client_body_timeout;
@@ -54,6 +53,7 @@ class LocationConf
 		LocationConf(SameportConf const &some);
 		~LocationConf();
 
+		void									reset_locationconf();
 		void									set_port(std::string const &port);
 		void									set_servername(std::vector<std::string> const &server_name);
 		void									set_root(std::string const &root);

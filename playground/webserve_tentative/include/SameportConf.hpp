@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 21:23:41 by user              #+#    #+#             */
-/*   Updated: 2023/07/21 19:20:51 by user             ###   ########.fr       */
+/*   Updated: 2023/07/21 23:38:26 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class SameportConf
 		std::string								_root;
 		std::vector<std::string>				_indexpage_set;
 		std::vector<std::string>				_allowmethod_set;
+		std::map<int, std::string>				_location_rank;
 		std::map<std::string, LocationConf>		_locations;
 		size_t 									_maxBodySize;
 		std::map<std::string, std::string> 		_errorpage_set;//これめっちゃおかしい使い方できる　error_page 403 404 500 503 =404 /custom_404.html;
@@ -37,7 +38,7 @@ class SameportConf
 		std::string								_errorlog;
 		size_t									_keepaliverequests;
 		size_t									_keepalive_timeout;
-		const int								_server_tokens;
+		int										_server_tokens;
 		bool									_autoindex;
 		size_t									_client_body_buffer_size;
 		size_t									_client_body_timeout;
@@ -57,7 +58,8 @@ class SameportConf
 		void									set_root(std::string const &root);
 		void									set_indexpage_set(std::vector<std::string> const &root);
 		void									set_allowmethod_set(std::vector<std::string> const &root);
-		void									set_locations(std::map<std::string, LocationConf> const &root);
+		void									set_locations(std::string const &key, LocationConf const &locationconf);
+		void									set_location_rank(int const &rank, std::string const &str);
 		void									set_maxBodySize(size_t const &root);
 		void									set_errorpage_set(std::map<std::string, std::string> const &root);
 		void									set_chunked_transferencoding_allow(bool const &allow_or_not);
@@ -79,6 +81,7 @@ class SameportConf
 		std::vector<std::string>				get_indexpage_set(void) const;
 		std::vector<std::string>				get_allowmethod_set(void) const;
 		std::map<std::string, LocationConf>		get_locations(void) const;
+		std::map<int, std::string>				get_location_rank(void) const;
 		size_t									get_maxBodySize(void) const;
 		std::map<std::string, std::string>		get_errorpage_set(void) const;
 		bool									get_chunked_transferencoding_allow(void) const;

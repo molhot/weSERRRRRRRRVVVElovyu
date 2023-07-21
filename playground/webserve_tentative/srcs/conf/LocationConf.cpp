@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 10:21:54 by user              #+#    #+#             */
-/*   Updated: 2023/07/21 19:58:37 by user             ###   ########.fr       */
+/*   Updated: 2023/07/21 23:31:11 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,33 @@ LocationConf::LocationConf(SameportConf const &some):_server_tokens(1)
 
 LocationConf::~LocationConf()
 {
+	_port = "";
+	_server_name.clear();
+	_root.clear();
+	_alias = "";
+	_indexpage_set.clear();
+	_allowmethod_set.clear();
+	_maxBodySize = 0;
+	_errorpage_set.clear();
+	_chunked_transferencoding_allow = true;
+	_accesslog = "";
+	_errorlog = "";
+	_keepaliverequests = 10;
+	_keepalive_timeout = 60;
+	_server_tokens = 1.0;
+	_autoindex = false;
+	_client_body_buffer_size = 1024;
+	_client_body_timeout = 60;
+	_client_header_buffer_size = 1024;
+	_client_header_timeout = 60;
+	_client_maxbody_size = 1024;
+	_default_type = "text/plain";
+	_cgi_path = "";
+	_upload_path = "";
+}
+
+void LocationConf::reset_locationconf()
+{
 
 }
 
@@ -56,7 +83,6 @@ void	LocationConf::set_servername(std::vector<std::string> const &server_name){ 
 void	LocationConf::set_root(std::string const &root){ this->_root = root; };
 void	LocationConf::set_indexpage_set(std::vector<std::string> const &_indexpage_set){ this->_indexpage_set = _indexpage_set; };
 void	LocationConf::set_allowmethod_set(std::vector<std::string> const &_allowed_method){ this->_allowmethod_set = _allowed_method; };
-void	LocationConf::set_locations(std::map<std::string, LocationConf> const &locations){ this->_locations = locations; };
 void	LocationConf::set_maxBodySize(size_t const &maxBodySize){ this->_maxBodySize = maxBodySize; };
 void	LocationConf::set_errorpage_set(std::map<std::string, std::string> const &errorpage_set){ this->_errorpage_set = errorpage_set; };
 void	LocationConf::set_chunked_transferencoding_allow(bool const &allow_or_not){ this->_chunked_transferencoding_allow = allow_or_not; };
@@ -86,7 +112,6 @@ std::vector<std::string>				LocationConf::get_servername(void) const { return (t
 std::string								LocationConf::get_root(void) const {return (this->_root); };
 std::vector<std::string>				LocationConf::get_indexpage_set(void) const { return (this->_indexpage_set); };
 std::vector<std::string>				LocationConf::get_allowmethod_set(void) const { return (this->_allowmethod_set); };
-std::map<std::string, LocationConf>		LocationConf::get_locations(void) const { return (this->_locations); };
 size_t									LocationConf::get_maxBodySize(void) const { return (this->_maxBodySize); };
 std::map<std::string, std::string>		LocationConf::get_errorpage_set(void) const { return (this->_errorpage_set); };
 bool									LocationConf::get_chunked_transferencoding_allow(void) { return (this->_chunked_transferencoding_allow); };

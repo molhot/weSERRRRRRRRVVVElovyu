@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:08:03 by user              #+#    #+#             */
-/*   Updated: 2023/07/21 19:26:38 by user             ###   ########.fr       */
+/*   Updated: 2023/07/21 23:42:21 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ void	SameportConf::set_servername(std::vector<std::string> const &server_name){ 
 void	SameportConf::set_root(std::string const &root){ this->_root = root; }
 void	SameportConf::set_indexpage_set(std::vector<std::string> const &_indexpage_set){ this->_indexpage_set = _indexpage_set; };
 void	SameportConf::set_allowmethod_set(std::vector<std::string> const &_allowed_method){ this->_allowmethod_set = _allowed_method; };
-void	SameportConf::set_locations(std::map<std::string, LocationConf> const &locations){ this->_locations = locations; };
+void	SameportConf::set_locations(std::string const &key, LocationConf const &locationconf){ (this->_locations)[key] = locationconf; };
+void	SameportConf::set_location_rank(int const &rank, std::string const &str) { this->_location_rank[rank] = str; };
 void	SameportConf::set_maxBodySize(size_t const &maxBodySize){ this->_maxBodySize = maxBodySize; };
 void	SameportConf::set_errorpage_set(std::map<std::string, std::string> const &errorpage_set){ this->_errorpage_set = errorpage_set; };
 void	SameportConf::set_chunked_transferencoding_allow(bool const &allow_or_not){ this->_chunked_transferencoding_allow = allow_or_not; };
@@ -83,6 +84,7 @@ std::string								SameportConf::get_root(void) const {return (this->_root); };
 std::vector<std::string>				SameportConf::get_indexpage_set(void) const { return (this->_indexpage_set); };
 std::vector<std::string>				SameportConf::get_allowmethod_set(void) const { return (this->_allowmethod_set); };
 std::map<std::string, LocationConf>		SameportConf::get_locations(void) const { return (this->_locations); };
+std::map<int, std::string>				SameportConf::get_location_rank(void) const { return (this->_location_rank); };
 size_t									SameportConf::get_maxBodySize(void) const { return (this->_maxBodySize); };
 std::map<std::string, std::string>		SameportConf::get_errorpage_set(void) const { return (this->_errorpage_set); };
 bool									SameportConf::get_chunked_transferencoding_allow(void) const { return (this->_chunked_transferencoding_allow); };
