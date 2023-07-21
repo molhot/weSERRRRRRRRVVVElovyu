@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 21:32:19 by user              #+#    #+#             */
-/*   Updated: 2023/07/21 14:39:21 by user             ###   ########.fr       */
+/*   Updated: 2023/07/21 15:17:48 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -199,7 +199,7 @@ bool	AllConf::serverkeyword(std::string const &line, SameportConf& port_conf)
 	{
 		if (val != "on" && val != "off")
 			return (false);
-		port_conf.set_chunked_transferencoding_allow(HandringString::return_matchpattern("on", "off", val));
+		port_conf.set_autoindex(HandringString::return_matchpattern("on", "off", val));
 	}
 	else if (key_word == "rewrite")//何するのかわからん
 		;
@@ -372,7 +372,9 @@ bool	AllConf::location_ch(std::string const &line)
 			if (line[pos + 1] == 'o' && line[pos + 2] == 'c' && line[pos + 3] == 'a' && line[pos + 4] == 't' && line[pos + 5] == 'i' && line[pos + 6] == 'o' && line[pos + 7] == 'n')
 			{
 				if (line[pos + 8] != ' ')
+				{
 					return (false);
+				}
 				return (true);
 			}
 			else
@@ -381,7 +383,9 @@ bool	AllConf::location_ch(std::string const &line)
 		else if (line[pos] == ' ' || line[pos] == '\t')
 			pos++;
 		else
+		{
 			return (false);
+		}
 	}
 	return (false);
 }
@@ -420,6 +424,7 @@ bool	AllConf::content_containnotrequiredword(std::string const &config_file)
 						return (false);
 					}
 					this->all_conf[portconf.get_port()].push_back(portconf);
+					portconf.reset_contents();
 					in_server = false;
 				}
 				else if (skip_emp[0] == '#')
@@ -462,4 +467,7 @@ void	AllConf::conf_check(std::string const &config_file)
 		return ;
 	else
 		this->_confready = contentch(config_file);
+	if (this->_confready == false)
+		return ;
+	
 }

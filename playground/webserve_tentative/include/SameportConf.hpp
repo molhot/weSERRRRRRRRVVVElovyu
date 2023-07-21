@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 21:23:41 by user              #+#    #+#             */
-/*   Updated: 2023/07/21 13:48:06 by user             ###   ########.fr       */
+/*   Updated: 2023/07/21 15:12:08 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class SameportConf
 		size_t									_keepaliverequests;
 		size_t									_keepalive_timeout;
 		const int								_server_tokens;
-		std::string								_autoindex;
+		bool									_autoindex;
 		size_t									_client_body_buffer_size;
 		size_t									_client_body_timeout;
 		size_t									_client_header_buffer_size;
@@ -47,6 +47,8 @@ class SameportConf
 	public:
 		SameportConf();
 		~SameportConf();
+
+		void									reset_contents();
 
 		void									set_port(std::string const &port);
 		void									set_servername(std::vector<std::string> const &server_name);
@@ -61,7 +63,7 @@ class SameportConf
 		void									set_errorlog(std::string const &access_log);
 		void									set_keepaliverequests(size_t const &max_requests);
 		void									set_keepalive_timeout(size_t const &timeout);
-		void									set_autoindex(std::string const &on_off);
+		void									set_autoindex(bool const &on_off);
 		void									set_client_body_buffer_size(size_t const &buffersize);
 		void									set_client_body_timeout(size_t const &timeout);
 		void									set_client_header_buffer_size(size_t const &buffersize);
@@ -82,7 +84,7 @@ class SameportConf
 		std::string								get_errorlog(void);
 		size_t									get_keepaliverequests(void);
 		size_t									get_keepalive_timeout(void);
-		std::string								get_autoindex(void);
+		bool									get_autoindex(void);
 		size_t									get_client_body_buffer_size(void);
 		size_t									get_client_body_timeout(void);
 		size_t									get_client_header_buffer_size(void);

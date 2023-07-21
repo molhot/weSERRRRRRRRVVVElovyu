@@ -6,13 +6,13 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:08:03 by user              #+#    #+#             */
-/*   Updated: 2023/07/21 13:49:11 by user             ###   ########.fr       */
+/*   Updated: 2023/07/21 15:12:36 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/SameportConf.hpp"
 
-SameportConf::SameportConf():_server_tokens(1)
+SameportConf::SameportConf():_server_tokens(1), _maxBodySize(1024), _chunked_transferencoding_allow(true), _autoindex(false)
 {
 
 }
@@ -20,6 +20,30 @@ SameportConf::SameportConf():_server_tokens(1)
 SameportConf::~SameportConf()
 {
 
+}
+
+void	SameportConf::reset_contents()
+{
+	_port = "";
+	_server_name.clear();
+	_root = "";
+	_indexpage_set.clear();
+	_allowmethod_set.clear();
+	_locations;
+	_maxBodySize = 1024;
+	_errorpage_set.clear();//これめっちゃおかしい使い方できる　error_page 403 404 500 503 =404 /custom_404.html;
+	_chunked_transferencoding_allow = true;
+	_accesslog = "";
+	_errorlog = "";
+	_keepaliverequests = 10;
+	_keepalive_timeout = 60;
+	_autoindex = false;
+	_client_body_buffer_size = 1024;
+	_client_body_timeout = 60;
+	_client_header_buffer_size = 1024;
+	_client_header_timeout = 60;
+	_client_maxbody_size = 1024;
+	_default_type = "text/plain";
 }
 
 // 　-＝ ∧ ∧　　setterだよ！　∧ ∧ ＝-
@@ -40,7 +64,7 @@ void	SameportConf::set_accesslog(std::string const &access_log){ this->_accesslo
 void	SameportConf::set_errorlog(std::string const &error_log){ this->_errorlog = error_log; };
 void	SameportConf::set_keepaliverequests(size_t const &max_requests){ this->_keepaliverequests = max_requests; };
 void	SameportConf::set_keepalive_timeout(size_t const &timeout){ this->_keepalive_timeout = timeout; };
-void	SameportConf::set_autoindex(std::string const &on_off){ this->_autoindex = on_off; };
+void	SameportConf::set_autoindex(bool const &on_off){ this->_autoindex = on_off; };
 void	SameportConf::set_client_body_buffer_size(size_t const &buffersize){ this->_client_body_buffer_size = buffersize; };
 void	SameportConf::set_client_body_timeout(size_t const &timeout){ this->_client_body_timeout = timeout; };
 void	SameportConf::set_client_header_buffer_size(size_t const &buffersize){ this->_client_header_buffer_size = buffersize; };
@@ -67,7 +91,7 @@ std::string								SameportConf::get_accesslog(void) { return (this->_accesslog)
 std::string								SameportConf::get_errorlog(void) {return (this->_errorlog); };
 size_t									SameportConf::get_keepaliverequests(void) { return (this->_keepaliverequests); };
 size_t									SameportConf::get_keepalive_timeout(void) { return (this->_keepalive_timeout); };
-std::string								SameportConf::get_autoindex(void) { return (this->_autoindex); };
+bool									SameportConf::get_autoindex(void) { return (this->_autoindex); };
 size_t									SameportConf::get_client_body_buffer_size(void) { return (this->_client_body_buffer_size); };
 size_t									SameportConf::get_client_body_timeout(void) { return (this->_client_body_timeout); };
 size_t									SameportConf::get_client_header_buffer_size(void) { return (this->_client_header_buffer_size); };
