@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 10:21:54 by user              #+#    #+#             */
-/*   Updated: 2023/07/21 23:31:11 by user             ###   ########.fr       */
+/*   Updated: 2023/07/22 02:09:45 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,11 @@ LocationConf::LocationConf(SameportConf const &some):_server_tokens(1)
 
 LocationConf::~LocationConf()
 {
+	
+}
+
+void LocationConf::reset_locationconf()
+{
 	_port = "";
 	_server_name.clear();
 	_root.clear();
@@ -68,9 +73,46 @@ LocationConf::~LocationConf()
 	_upload_path = "";
 }
 
-void LocationConf::reset_locationconf()
+void LocationConf::reset_locationconf(SameportConf const &some)
 {
+	this->_port = some.get_port();
+	this->_server_name = some.get_servername();
+	this->_root = some.get_root();
+	this->_indexpage_set = some.get_indexpage_set();
+	this->_allowmethod_set = some.get_allowmethod_set();
+	this->_maxBodySize = some.get_maxBodySize();
+	this->_errorpage_set = some.get_errorpage_set();
+	this->_chunked_transferencoding_allow = some.get_chunked_transferencoding_allow();
+	this->_accesslog = some.get_accesslog();
+	this->_errorlog = some.get_errorlog();
+	this->_keepaliverequests = some.get_keepaliverequests();
+	this->_keepalive_timeout = some.get_keepalive_timeout();
+	this->_autoindex = some.get_autoindex();
+	this->_client_body_buffer_size = some.get_client_body_buffer_size();
+	this->_client_body_timeout = some.get_client_body_timeout();
+	this->_client_header_buffer_size = some.get_client_body_buffer_size();
+	this->_client_header_timeout = some.get_client_header_timeout();
+	this->_client_maxbody_size = some.get_client_maxbody_size();
+	this->_default_type = some.get_default_type();
+}
 
+void	LocationConf::show_locationconfinf()
+{
+	std::cout << "============" << std::endl;
+	std::cout << "port is " << this->get_port() << std::endl;
+	if (this->get_servername().size() != 0)
+		std::cout << "servername is " << this->get_servername()[0] << std::endl;
+	std::cout << "             " << std::endl;
+	std::cout << "root is " << this->get_root() << std::endl;
+	std::cout << "alias is " << this->get_alias() << std::endl;
+	std::cout << "             " << std::endl;
+	if (this->get_autoindex() == true)
+		std::cout << "autoindex is true" << std::endl;
+	else
+		std::cout << "autoindex is false" << std::endl;
+	std::cout << "             " << std::endl;
+	std::cout << "cgi_path is " << this->get_cgi_path() << std::endl;
+	std::cout << "             " << std::endl;
 }
 
 // 　-＝ ∧ ∧　　setterだよ！　∧ ∧ ＝-

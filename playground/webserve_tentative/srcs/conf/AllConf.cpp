@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 21:32:19 by user              #+#    #+#             */
-/*   Updated: 2023/07/21 23:43:47 by user             ###   ########.fr       */
+/*   Updated: 2023/07/22 02:16:55 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ bool	AllConf::locationkeyword(std::string const &line, LocationConf& locationcon
 	splited_woeds >> key_word >> val;
 	if (key_word == "" && val == "")
 		return (true);
-	std::cout << "key is " << key_word << std::endl;
-	std::cout << "val is " << val << std::endl;
+	// std::cout << "key is " << key_word << std::endl;
+	// std::cout << "val is " << val << std::endl;
 	if (InterpretLocationconf::locationkeyword_ch(key_word) == false)
 		return (false);
 	if (key_word == "listen")
@@ -85,7 +85,7 @@ bool	AllConf::locationkeyword(std::string const &line, LocationConf& locationcon
 		val = HandringString::skip_lastsemicoron(val);
 		if (val != "on" && val != "off")
 			return (false);
-		locationconf.set_chunked_transferencoding_allow(HandringString::return_matchpattern("on", "off", val));
+		locationconf.set_autoindex(HandringString::return_matchpattern("on", "off", val));
 	}
 	else if (key_word == "upload_path")
 		locationconf.set_upload_path(val);
@@ -158,7 +158,7 @@ bool	AllConf::serverkeyword(std::string const &line, SameportConf& port_conf)
 	splited_woeds >> key_word >> val;
 	if (key_word == "" && val == "")
 	{
-		std::cout << "there is all emp" << std::endl;
+		// std::cout << "there is all emp" << std::endl;
 		return (true);
 	}
 	if (InterpretServerconf::serverkeyword_ch(key_word) == false)
@@ -411,7 +411,7 @@ bool	AllConf::content_containnotrequiredword(std::string const &config_file)
 	while (std::getline(conf_file, line))
 	{
 		skip_emp = HandringString::skipping_emptywd(line);
-		std::cout << "emp is " << skip_emp << std::endl;
+		// std::cout << "emp is " << skip_emp << std::endl;
 		if (in_location == true && in_server == true)// locationの中 locationの中だからserverの中
 		{
 			if (skip_emp == "}")
@@ -430,8 +430,9 @@ bool	AllConf::content_containnotrequiredword(std::string const &config_file)
 						std::cout << "conf must contain port!!" << std::endl;
 						return (false);
 					}
-					this->conf_rank[rank] = portconf.get_port();
-					this->all_conf[portconf.get_port()] = portconf;
+					std::cout << portconf.get_port() + '_' + portconf.get_servername()[0] << std::endl;
+					this->conf_rank[rank] = portconf.get_port() + '_' + portconf.get_servername()[0];
+					this->all_conf[portconf.get_port() + '_' + portconf.get_servername()[0]] = portconf;
 					portconf.reset_contents();
 					in_server = false;
 					rank++;
@@ -459,6 +460,7 @@ bool	AllConf::content_containnotrequiredword(std::string const &config_file)
 		}
 		pos++;
 	}
+	std::cout << "rank is " << rank << std::endl;
 	return (true);
 }
 
@@ -490,7 +492,7 @@ bool	AllConf::allocationch(std::string const &config_file)
 	while (std::getline(conf_file, line))
 	{
 		skip_emp = HandringString::skipping_emptywd(line);
-		std::cout << "emp is " << skip_emp << std::endl;
+		// std::cout << "emp is " << skip_emp << std::endl;
 		if (in_location == true && in_server == true)// locationの中 locationの中だからserverの中
 		{
 			if (skip_emp == "}")
@@ -498,6 +500,7 @@ bool	AllConf::allocationch(std::string const &config_file)
 				(all_conf[conf_rank[rank]]).set_locations(location_path, locationconf);
 				(all_conf[conf_rank[rank]]).set_location_rank(allocation_rank, location_path);
 				allocation_rank++;
+				locationconf.reset_locationconf(all_conf[conf_rank[rank]]);
 				in_location = false;
 			}
 			else if (locationkeyword(line, locationconf) == false)
@@ -512,13 +515,20 @@ bool	AllConf::allocationch(std::string const &config_file)
 			{
 				if (location_ch(line) == true)
 				{
-					std::cout << "location path is " << obtain_locationpath(line) << std::endl;
+					// std::cout << "location path is " << obtain_locationpath(line) << std::endl;
 					location_path = obtain_locationpath(line);
+					std::cout << "=====" << std::endl;
+					std::cout << "location path is " << location_path << std::endl;
+					std::cout << "=====" << std::endl;
 					in_location = true;
 				}
 				else if (skip_emp == "}")
 				{
+					std::cout << "=====" << std::endl;
+					std::cout << all_conf[conf_rank[rank]].get_port() << std::endl;
+					std::cout << "=====" << std::endl;
 					rank++;
+					locationconf.reset_locationconf(all_conf[conf_rank[rank]]);
 					in_server = false;
 					allocation_rank = 1;
 				}
@@ -535,6 +545,8 @@ bool	AllConf::allocationch(std::string const &config_file)
 		}
 		pos++;
 	}
+	std::cout << "rank is " << rank << std::endl;
+	std::cout << "allocation_rank is " << allocation_rank << std::endl;
 	return (true);
 }
 

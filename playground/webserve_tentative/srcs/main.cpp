@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 00:18:13 by user              #+#    #+#             */
-/*   Updated: 2023/07/22 00:10:04 by user             ###   ########.fr       */
+/*   Updated: 2023/07/22 02:25:55 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,20 @@ int main(int argc, char **argv)
 	while (pos != rank)
 	{
 		SameportConf	portconf = test[allconf.get_conf_rank()[pos]];
+		std::cout << "---------" << std::endl;
+		std::cout << allconf.get_conf_rank()[pos] << std::endl;
+		std::cout << portconf.get_port() << std::endl;
+		std::cout << std::endl;
 		int				location_count = portconf.get_locations().size();
-		while (location_pos != location_count)
+		while (location_pos != location_count + 1)
 		{
 			LocationConf	locationconf = portconf.get_locations()[portconf.get_location_rank()[location_pos]];
+			std::cout << "~~~~~~~" << std::endl;
+			std::cout << portconf.get_location_rank()[location_pos] << std::endl;
+			locationconf.show_locationconfinf();
+			location_pos++;
 		}
 		pos++;
-		location_pos = 0;
+		location_pos = 1;
 	}
 }

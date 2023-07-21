@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 21:47:46 by user              #+#    #+#             */
-/*   Updated: 2023/07/21 23:30:19 by user             ###   ########.fr       */
+/*   Updated: 2023/07/22 02:09:07 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <iostream>
 
 #include "SameportConf.hpp"
 
@@ -54,6 +55,9 @@ class LocationConf
 		~LocationConf();
 
 		void									reset_locationconf();
+		void									reset_locationconf(SameportConf const &some);
+		void									show_locationconfinf();
+
 		void									set_port(std::string const &port);
 		void									set_servername(std::vector<std::string> const &server_name);
 		void									set_root(std::string const &root);
