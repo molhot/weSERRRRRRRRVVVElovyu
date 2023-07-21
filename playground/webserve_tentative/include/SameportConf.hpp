@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 21:23:41 by user              #+#    #+#             */
-/*   Updated: 2023/07/20 11:01:23 by user             ###   ########.fr       */
+/*   Updated: 2023/07/21 13:48:06 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,25 +70,26 @@ class SameportConf
 		void									set_default_type(std::string const &default_type);
 
 		std::string								get_port(void) const;
-		std::string								get_servername(void) const;
+		std::vector<std::string>				get_servername(void) const;
 		std::string								get_root(void) const;
 		std::vector<std::string>				get_indexpage_set(void) const;
 		std::vector<std::string>				get_allowmethod_set(void) const;
 		std::map<std::string, LocationConf>		get_locations(void) const;
 		size_t									get_maxBodySize(void) const;
 		std::map<std::string, std::string>		get_errorpage_set(void) const;
-		bool									get_chunked_transferencoding_allow(bool const &allow_or_not);
-		std::string								get_accesslog(std::string const &access_log);
-		std::string								get_errorlog(std::string const &access_log);
-		size_t									get_keepaliverequests(size_t const &max_requests);
-		size_t									get_keepalive_timeout(size_t const &timeout);
-		std::string								get_autoindex(std::string const &on_off);
-		size_t									get_client_body_buffer_size(size_t const &buffersize);
-		size_t									get_client_body_timeout(size_t const &timeout);
-		size_t									get_client_header_buffer_size(size_t const &buffersize);
-		size_t									get_client_header_timeout(size_t const &timeout);
-		size_t									get_client_maxbody_size(size_t const &buffersize);
-		std::string								get__default_type(std::string const &default_type);
+		bool									get_chunked_transferencoding_allow(void);
+		std::string								get_accesslog(void);
+		std::string								get_errorlog(void);
+		size_t									get_keepaliverequests(void);
+		size_t									get_keepalive_timeout(void);
+		std::string								get_autoindex(void);
+		size_t									get_client_body_buffer_size(void);
+		size_t									get_client_body_timeout(void);
+		size_t									get_client_header_buffer_size(void);
+		size_t									get_client_header_timeout(void);
+		size_t									get_client_maxbody_size(void);
+		std::string								get__default_type(void);
+		int										get_version(void);
 };
 
 #endif

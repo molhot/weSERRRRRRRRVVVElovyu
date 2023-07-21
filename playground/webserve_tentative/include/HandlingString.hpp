@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 23:05:40 by user              #+#    #+#             */
-/*   Updated: 2023/07/20 22:54:48 by user             ###   ########.fr       */
+/*   Updated: 2023/07/21 12:04:48 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include <iostream>
 
 class HandringString
 {
@@ -30,6 +31,7 @@ class HandringString
 		static	std::string					skipping_emptywd(std::string const &word);
 		static	bool						ch_under_intmax(std::string const &word);
 		static	int							str_to_int(std::string const &word);
+		static	void						error_show(std::string const &word, size_t const &pos);
 };
 
 #endif
