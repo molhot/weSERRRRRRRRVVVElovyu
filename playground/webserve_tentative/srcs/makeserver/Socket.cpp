@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 15:41:08 by user              #+#    #+#             */
-/*   Updated: 2023/07/22 15:53:48 by user             ###   ########.fr       */
+/*   Updated: 2023/07/22 21:44:22 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,21 @@ int	Socket::makesocket(std::string const &port)
 	if (makeAddressInfo(port, &addr_inf) == -1)
 		return (-1);
 	_socketFD = socket(addr_inf->ai_family, addr_inf->ai_socktype, addr_inf->ai_protocol);
+	if (_socketFD == -1)
+	{
+		std::cout << "socket func is missed" << std::endl;
+		close(_socketFD);
+		freeaddrinfo(addr_inf);
+	}
+	if (bind(_socketFD, addr_inf->ai_addr, addr_inf->ai_addrlen) == -1)
+	{
+		std::cout << "bind func is missed" << std::endl;
+		close(_socketFD);
+		freeaddrinfo(addr_inf);
+		return (-1);
+	}
+
+	fcntl(_socketFD, F_SETFL, O_NONBLOCK);
+	freeaddrinfo(addr_inf);
+	return (0);
 }
