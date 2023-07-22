@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 21:18:13 by user              #+#    #+#             */
-/*   Updated: 2023/07/22 15:38:31 by user             ###   ########.fr       */
+/*   Updated: 2023/07/23 01:18:03 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class AllConf
 		bool												_confready;
 		static struct timeval								_timeout;
 		std::map<int, std::vector<SameportConf> >			_sockets;
-		int													_allFD;
+		int													_allaccseptFD;
 		std::vector<int>									_acceptedFD;
 		
 		size_t												count_semicoron(std::string const &line);
@@ -59,6 +59,7 @@ class AllConf
 		bool												allocationch(std::string const &config_file);
 
 		void												makeServersockets(void);
+		void												run(void);
 };
 
 #endif

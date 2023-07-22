@@ -6,12 +6,12 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 13:26:28 by user              #+#    #+#             */
-/*   Updated: 2023/07/22 15:52:59 by user             ###   ########.fr       */
+/*   Updated: 2023/07/23 01:20:28 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # ifndef Socket_HPP
-# define Socekt_HPP
+# define Socket_HPP
 
 # include <string>
 # include <map>
@@ -42,6 +42,8 @@ class Socket
 	public:
 		Socket(std::string const &port);
 		~Socket();
+
+		int			get_socketFD(void) const;
 };
 
 # endif

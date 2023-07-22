@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 15:41:08 by user              #+#    #+#             */
-/*   Updated: 2023/07/22 21:44:22 by user             ###   ########.fr       */
+/*   Updated: 2023/07/23 00:07:21 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,9 @@ int	Socket::makesocket(std::string const &port)
 	fcntl(_socketFD, F_SETFL, O_NONBLOCK);
 	freeaddrinfo(addr_inf);
 	return (0);
+}
+
+int Socket::get_socketFD() const
+{
+	return (this->_socketFD);
 }

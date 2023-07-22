@@ -4,6 +4,7 @@ CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 CONF_DIR = webserve_tentative/srcs/conf
 SOCKET_DIR = webserve_tentative/srcs/makeserver
+HTTP_DIR = webserve_tentative/srcs/httphandling
 
 #utils
 SRCS = $(CONF_DIR)/HandlingString.cpp
@@ -12,7 +13,10 @@ SRCS = $(CONF_DIR)/HandlingString.cpp
 SRCS += $(CONF_DIR)/AllConf.cpp $(CONF_DIR)/LocationConf.cpp $(CONF_DIR)/SameportConf.cpp $(CONF_DIR)/InterpretServerconf.cpp $(CONF_DIR)/InterpretLocationonf.cpp
 
 #socketに関する
-SRCS += $(SOCKET_DIR)/makeSockets.cpp
+SRCS += $(SOCKET_DIR)/makeSockets.cpp $(SOCKET_DIR)/Socket.cpp
+
+#http通信を実際に行う
+SRCS += $(HTTP_DIR)/run.cpp
 
 #main
 SRCS += webserve_tentative/srcs/main.cpp
