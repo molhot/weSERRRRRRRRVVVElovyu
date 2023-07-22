@@ -3,8 +3,20 @@ CXX = c++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 CONF_DIR = webserve_tentative/srcs/conf
+SOCKET_DIR = webserve_tentative/srcs/makeserver
+
+#utils
+SRCS = $(CONF_DIR)/HandlingString.cpp
+
 # conに関するsrc
-SRCS = webserve_tentative/srcs/main.cpp $(CONF_DIR)/AllConf.cpp $(CONF_DIR)/LocationConf.cpp $(CONF_DIR)/SameportConf.cpp $(CONF_DIR)/InterpretServerconf.cpp $(CONF_DIR)/InterpretLocationonf.cpp $(CONF_DIR)/HandlingString.cpp
+SRCS += $(CONF_DIR)/AllConf.cpp $(CONF_DIR)/LocationConf.cpp $(CONF_DIR)/SameportConf.cpp $(CONF_DIR)/InterpretServerconf.cpp $(CONF_DIR)/InterpretLocationonf.cpp
+
+#socketに関する
+SRCS += $(SOCKET_DIR)/makeSockets.cpp
+
+#main
+SRCS += webserve_tentative/srcs/main.cpp
+
 
 OBJS = $(SRCS:.cpp=.o)
 

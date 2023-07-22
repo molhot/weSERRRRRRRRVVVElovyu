@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 12:21:15 by user              #+#    #+#             */
-/*   Updated: 2023/07/21 12:07:28 by user             ###   ########.fr       */
+/*   Updated: 2023/07/22 15:26:59 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 std::vector<std::string> HandringString::inputargtomap_withoutfirst(std::string const &words)
 {
+	std::string					replaced_words = HandringString::skip_lastsemicoron(words);
 	std::string					word;
-	std::istringstream			splited_words(words);
+	std::istringstream			splited_words(replaced_words);
 	std::vector<std::string>	ans;
 
 	splited_words >> word;
@@ -102,9 +103,12 @@ bool	HandringString::ch_lastword_semicoron(std::string const &word)
 
 std::string	HandringString::skip_lastsemicoron(std::string const &word)
 {
-	size_t	pos = 0;
-	std::string	return_str = "";
+	size_t		pos = 0;
+	std::string	return_str;
+	size_t		index = word.find(';');
 
+	if (index == std::string::npos)
+		return (word);
 	while (word[pos] != ';')
 	{
 		return_str = return_str + word[pos];
