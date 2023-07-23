@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 15:41:08 by user              #+#    #+#             */
-/*   Updated: 2023/07/23 00:07:21 by user             ###   ########.fr       */
+/*   Updated: 2023/07/23 12:51:48 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int Socket::makeAddressInfo(std::string const &port, struct addrinfo **res)
 
 int	Socket::makesocket(std::string const &port)
 {
+	std::cout << "port is " << port << std::endl;
 	struct addrinfo *addr_inf = NULL;
 
 	if (makeAddressInfo(port, &addr_inf) == -1)
@@ -53,9 +54,25 @@ int	Socket::makesocket(std::string const &port)
 		close(_socketFD);
 		freeaddrinfo(addr_inf);
 	}
+
+	int opt = 1;
+	if (setsockopt(_socketFD, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)) == -1) {
+		perror("setsockopt");
+		close(_socketFD);
+		freeaddrinfo(addr_inf);
+		return (-1);
+	}
+
 	if (bind(_socketFD, addr_inf->ai_addr, addr_inf->ai_addrlen) == -1)
 	{
 		std::cout << "bind func is missed" << std::endl;
+		close(_socketFD);
+		freeaddrinfo(addr_inf);
+		return (-1);
+	}
+
+	if (listen(_socketFD, SOMAXCONN) == -1) {
+		perror("listen");
 		close(_socketFD);
 		freeaddrinfo(addr_inf);
 		return (-1);

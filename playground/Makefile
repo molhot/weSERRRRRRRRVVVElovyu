@@ -15,7 +15,7 @@ SRCS += $(CONF_DIR)/AllConf.cpp $(CONF_DIR)/LocationConf.cpp $(CONF_DIR)/Samepor
 #socketに関する
 SRCS += $(SOCKET_DIR)/makeSockets.cpp $(SOCKET_DIR)/Socket.cpp
 
-#http通信を実際に行う
+#http通信を実際に行うことに関する
 SRCS += $(HTTP_DIR)/run.cpp
 
 #main

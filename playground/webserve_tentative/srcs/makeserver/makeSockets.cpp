@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 13:58:43 by user              #+#    #+#             */
-/*   Updated: 2023/07/23 01:15:56 by user             ###   ########.fr       */
+/*   Updated: 2023/07/23 12:43:24 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	AllConf::makeServersockets()
 		if (it_ch == handled_port.end())
 		{
 			Socket	new_sock(it->second.get_port());
-			fd_with_port[it->first] = new_sock.get_socketFD();
+			fd_with_port[it->second.get_port()] = new_sock.get_socketFD();
 			handled_port.push_back(it->second.get_port());
 			this->_sockets[new_sock.get_socketFD()].push_back(it->second);
 			this->_allaccseptFD = new_sock.get_socketFD();

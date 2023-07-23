@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 21:18:13 by user              #+#    #+#             */
-/*   Updated: 2023/07/23 01:18:03 by user             ###   ########.fr       */
+/*   Updated: 2023/07/23 13:06:20 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+
 #include "InterpretLocationconf.hpp"
 #include "InterpretServerconf.hpp"
 #include "HandlingString.hpp"
 #include "SameportConf.hpp"
 #include "Socket.hpp"
+#include "Request.hpp"
 
 class AllConf
 {
@@ -31,10 +33,11 @@ class AllConf
 		std::map<int, std::string>							conf_rank;
 		std::map<std::string, SameportConf >				all_conf;//port(listen) その中の各情報（ポートに紐づく情報は一つと限らない）
 		bool												_confready;
-		static struct timeval								_timeout;
 		std::map<int, std::vector<SameportConf> >			_sockets;
+		std::map<int, int >									_connnected_sockets;
 		int													_allaccseptFD;
 		std::vector<int>									_acceptedFD;
+		static struct timeval								_timeout;
 		
 		size_t												count_semicoron(std::string const &line);
 		void												conf_check(std::string const &config_file);
@@ -45,6 +48,10 @@ class AllConf
 		bool												location_ch(std::string const &line);
 		bool												content_containnotrequiredword(std::string const& config_file);
 		std::string											obtain_locationpath(std::string const &line);
+		
+		void												set_allrecvfds(fd_set *allfd);
+		void												connect_server_requester(int fd, fd_set *all_recvfds);
+		void												accept_requestmessage(int fd, fd_set *all_recvfds, fd_set *all_sendfds, std::map<int, std::string> &strage);
 	
 	public:
 		AllConf(std::string const &config_file);
