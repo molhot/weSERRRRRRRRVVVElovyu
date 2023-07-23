@@ -16,7 +16,7 @@ SRCS += $(CONF_DIR)/AllConf.cpp $(CONF_DIR)/LocationConf.cpp $(CONF_DIR)/Samepor
 SRCS += $(SOCKET_DIR)/makeSockets.cpp $(SOCKET_DIR)/Socket.cpp
 
 #http通信を実際に行うことに関する
-SRCS += $(HTTP_DIR)/run.cpp
+SRCS += $(HTTP_DIR)/run.cpp $(HTTP_DIR)/interpret_request.cpp
 
 #main
 SRCS += webserve_tentative/srcs/main.cpp

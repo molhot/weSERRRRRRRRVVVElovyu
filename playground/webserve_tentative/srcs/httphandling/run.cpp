@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 01:18:14 by user              #+#    #+#             */
-/*   Updated: 2023/07/23 12:54:53 by user             ###   ########.fr       */
+/*   Updated: 2023/07/23 20:38:21 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,10 +104,11 @@ void	AllConf::accept_requestmessage(int fd, fd_set *all_recvfds, fd_set *all_sen
 
 	len = recv(fd, buffer, BUFSIZE, 0);
 	buffer[len] = '\0';
-	std::cout << "buffer is " << std::endl;
-	std::cout << buffer;
-	(void)strage;
-	FD_CLR(fd, all_recvfds);
-	FD_SET(fd, all_sendfds);
-	close(fd);
+	strage[fd] = strage[fd] + buffer;
+	if (strage[fd].find("\r\n\r\n") == std::string::npos)
+		return ;
+	
+	Request user_request(strage[fd]);
+	(void)all_recvfds;
+	(void)all_sendfds;
 }
